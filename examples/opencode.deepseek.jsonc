@@ -1,0 +1,76 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "deepseek/deepseek-flash",
+  "plugins": [
+    {
+      "package": "./opencode-deepseek-research",
+      "options": {
+        "toolResultLimit": 32000,
+        "cacheMinPromptTokens": 200000,
+        "cacheMinHitRate": 0.5,
+        "pythonPath": "python3",
+        "runCodeTimeoutSec": 600,
+        "runCodeCpuSec": 60,
+        "runCodeMemoryMb": 2048,
+        "runCodeNetwork": false,
+        "runCodeKernel": "persistent",
+        "verifyNetwork": true,
+        "verifyGate": true,
+        "verifyMaxGates": 1,
+        "bestOfN": true,
+        "bestOfNMaxCandidates": 5,
+        "bestOfNTimeoutSec": 600,
+        "bestOfNJudge": true,
+        "bestOfNJudgeTimeoutSec": 180,
+        "bestOfNNotify": true,
+        "agentPresets": true,
+        "researchSkills": true,
+        "researchCommands": true,
+        "budgetUSD": 0,
+        "budgetScope": "project",
+        "budgetNotify": true
+      }
+    }
+  ],
+  "compaction": {
+    "auto": true,
+    "buffer": 65536,
+    "keep": {
+      "tokens": 120000
+    }
+  },
+  "providers": {
+    "deepseek": {
+      "package": "@opencode/ai/providers/anthropic-compatible",
+      "env": ["DEEPSEEK_API_KEY"],
+      "settings": {
+        "baseURL": "https://api.deepseek.com/anthropic"
+      },
+      "models": {
+        "deepseek-flash": {
+          "name": "DeepSeek V4.1 Flash 1017",
+          "limit": {
+            "context": 1000000,
+            "output": 393216
+          },
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image"],
+            "output": ["text"],
+            "reasoning": {
+              "supported": true,
+              "effort": ["low", "high", "max"]
+            }
+          },
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cache": {
+              "read": 0.006
+            }
+          }
+        }
+      }
+    }
+  }
+}
