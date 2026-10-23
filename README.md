@@ -56,6 +56,9 @@ background jobs, SLURM, Kubernetes, SSH jobs, or GPU allocation.
 
 ## Install locally
 
+For a step-by-step global/project installation, verification, upgrade, rollback,
+and troubleshooting guide, see [`docs/INSTALL.md`](./docs/INSTALL.md).
+
 ```jsonc
 {
   "plugins": [
@@ -306,8 +309,11 @@ OpenCode built-ins): `cost_report`, four `exp_*` tools, `verify`, `best_of_n`,
 | Feature | Why it is still relevant | Status |
 |---|---|---|
 | Installation/global config | Make the plugin load in daily OpenCode instead of only temp projects | Deferred until development ends |
-| Zero-model `/cost` command | Show the cost panel without spending a model turn | Optional |
 | Official DeepSeek Messages validation | Verify the native Anthropic-compatible route if you switch from OpenCode Go | Blocked: no credentials |
+
+OpenCode and the Go subscription already expose real-time billing, so a separate
+zero-model `/cost` command is intentionally **not** planned. `cost_report` remains
+useful only for per-task/session/agent/model breakdown.
 
 K8s, generic SSH jobs, real SLURM validation, multi-server locks, GPU allocation,
 and cloud billing are **not needed** for this profile.

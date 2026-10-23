@@ -856,8 +856,9 @@ await ctx.tool.transform((editor) => {
 | 持久 Python kernel | 在多次 `run_code` 间保留变量/数据，提升分析与画图效率 | 已完成（`runCodeKernel: "persistent"`） |
 | 后台 Best-of-N | gap/brainstorm 候选异步执行，避免阻塞父会话 | 已完成（`background: true` + status/cancel） |
 | 安装/全局配置 | 让插件在日常 OpenCode 中加载 | 开发结束后再做 |
-| 零模型 `/cost` 命令 | 直接看成本面板，不消耗模型 turn | 可选 |
 | 官方 DeepSeek Messages 验证 | 切换官方 API 时确认协议兼容 | 阻塞：无凭据 |
+
+OpenCode / Go 订阅已有实时计费，因此不计划单独的零模型 `/cost` 命令；`cost_report` 仅用于按 task/session/agent/model 拆分。
 
 **不需要**：K8s、通用 SSH-only provider、真实 SLURM 验证、多 server 锁、GPU 实际分配、云账单。它们与“Linux server 手动跑实验”的 profile 不匹配。
 
@@ -971,7 +972,7 @@ Round 12 验收（范围收敛）：
 - 插件工具：8 个（`cost_report`、4 个 `exp_*`、`verify`、`best_of_n`、`run_code`）；总计 20 个 advertised tools（含 OpenCode built-ins）。
 - 移出：`job_*`、本地 job runner、SLURM provider、完成通知、shell 自动记录、GPU 小时账本/GPU 预算。
 - 保留：科研规则、effort/输出预算、缓存审计、compaction、spill、`exp_*`、`run_code`、`verify`/门禁、同步 `best_of_n`、presets/skills/commands、USD cost_report/budget。
-- 文档已列出“需要但未开发”：后台 Best-of-N（可选）、安装/全局配置（延后）、零模型 `/cost`（可选）、官方 Messages 验证（阻塞）；持久 Python kernel 已在 Round 13 完成。
+- 文档已列出“需要但未开发”：安装/全局配置（延后）、官方 Messages 验证（阻塞）；后台 Best-of-N 与持久 Python kernel 已完成；零模型 `/cost` 因 OpenCode/Go 已有实时计费而不做。
 - Git 提交：`4dc9bad`。
 
 Round 13 验收（持久 Python kernel）：

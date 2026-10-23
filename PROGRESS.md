@@ -924,8 +924,11 @@ part of the product profile.
 | Persistent Python kernel | Keep variables/data/imports across analysis calls | Done in Round 13 |
 | Background Best-of-N | Avoid blocking gap/brainstorm candidate runs | Done in Round 14 |
 | Installation/global config | Load the plugin in daily OpenCode | Deferred |
-| Zero-model `/cost` command | Inspect cost without a model turn | Optional |
 | Official DeepSeek Messages validation | Validate the native provider route if switching | Blocked: no credentials |
+
+A zero-model `/cost` command is not planned: OpenCode and the Go subscription
+already provide real-time billing; `cost_report` is for per-task/agent/model
+breakdown only.
 
 K8s, generic SSH-only jobs, real SLURM validation, multi-server locks, GPU
 allocation, and cloud billing are explicitly out of scope for this profile.
@@ -1004,7 +1007,6 @@ fresh-process runner remains the default.
 
 - Background Best-of-N, if long gap/brainstorm candidate runs become a bottleneck.
 - Installation/global config after development and validation.
-- Optional zero-model `/cost` command.
 
 ## Round 14 — 2026-10-23
 
@@ -1058,6 +1060,8 @@ parent tool call. The synchronous path remains the default.
 ### Next
 
 - Installation/global config after development and validation.
-- Optional zero-model `/cost` command.
 - Official DeepSeek Messages validation when credentials are available.
+
+A zero-model `/cost` command is intentionally not planned; OpenCode/Go already
+provides real-time billing.
 
