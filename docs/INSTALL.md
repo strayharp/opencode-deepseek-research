@@ -30,7 +30,7 @@ opencode --version
 本文假设插件位于：
 
 ```text
-/Users/xumou/Documents/GitHub/opencode_general/opencode-deepseek-research
+/Users/username/Documents/GitHub/opencode_general/opencode-deepseek-research
 ```
 
 如果你移动了目录，后续所有 `package` 路径都要替换成实际绝对路径。
@@ -54,7 +54,7 @@ bun --version
 如果插件目录下没有 `node_modules`，安装依赖：
 
 ```sh
-cd /Users/xumou/Documents/GitHub/opencode_general/opencode-deepseek-research
+cd /Users/username/Documents/GitHub/opencode_general/opencode-deepseek-research
 bun install
 ```
 
@@ -153,9 +153,9 @@ cp ~/.config/opencode/opencode.jsonc \
   },
 
   "plugins": [
-    "/Users/xumou/.config/opencode/plugins/srt-shell",
+    "/Users/username/.config/opencode/plugins/srt-shell",
     {
-      "package": "/Users/xumou/Documents/GitHub/opencode_general/opencode-deepseek-research",
+      "package": "/Users/username/Documents/GitHub/opencode_general/opencode-deepseek-research",
       "options": {
         "toolResultLimit": 32000,
         "cacheMinPromptTokens": 200000,
@@ -266,7 +266,7 @@ opencode reload
   "$schema": "https://opencode.ai/config.json",
   "plugins": [
     {
-      "package": "/Users/xumou/Documents/GitHub/opencode_general/opencode-deepseek-research",
+      "package": "/Users/username/Documents/GitHub/opencode_general/opencode-deepseek-research",
       "options": {
         "pythonPath": "/opt/anaconda3/bin/python3",
         "runCodeKernel": "persistent",
@@ -396,7 +396,7 @@ tail -100 ~/.local/share/opencode/opencode.log | grep -i deepseek-research
 3. 如果依赖变化：
 
 ```sh
-cd /Users/xumou/Documents/GitHub/opencode_general/opencode-deepseek-research
+cd /Users/username/Documents/GitHub/opencode_general/opencode-deepseek-research
 bun install
 ```
 
@@ -456,9 +456,9 @@ rm -rf /private/var/folders/.../opencode-deepseek-research
 {
   "$schema": "https://opencode.ai/config.json",
   "plugins": [
-    "/Users/xumou/.config/opencode/plugins/srt-shell",
+    "/Users/username/.config/opencode/plugins/srt-shell",
     {
-      "package": "/Users/xumou/Documents/GitHub/opencode_general/opencode-deepseek-research",
+      "package": "/Users/username/Documents/GitHub/opencode_general/opencode-deepseek-research",
       "options": {
         "pythonPath": "/opt/anaconda3/bin/python3",
         "runCodeKernel": "persistent"

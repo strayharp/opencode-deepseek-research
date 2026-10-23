@@ -43,7 +43,7 @@ P0 foundation:
 - Git: initialized with a separate git dir under the approved temp path;
   first commit `7b69b9e` — "round 1: research rules, effort routing, output
   budgets, provider example".
-- Worktree remains `/Users/xumou/Documents/GitHub/opencode_general/opencode-deepseek-research`.
+- Worktree remains `/Users/username/Documents/GitHub/opencode_general/opencode-deepseek-research`.
 
 ### Known limitations
 
